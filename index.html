@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Online Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Easy Store</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Shop</a></li>
+                <li><a href="#cart">Cart</a></li>
+                <li><a href="#checkout">Checkout</a></li>
+            </ul>
+            <div class="cart-icon">
+                <a href="#cart"><img src="cart.png" alt="Cart"></a>
+                <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Style</h1>
+            <p>Shop the latest fashion trends and enjoy exclusive deals.</p>
+            <a href="#products" class="shop-now-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Product Listings -->
+    <section id="products" class="products-section">
+        <div class="filter-bar">
+            <label for="category">Category:</label>
+            <select id="category" onchange="filterProducts()">
+                <option value="all">All</option>
+                <option value="clothing">Clothing</option>
+                <option value="accessories">Accessories</option>
+                <option value="electronics">Electronics</option>
+            </select>
+            <input type="text" id="search" placeholder="Search products..." oninput="filterProducts()">
+        </div>
+        <h2>Our Products</h2>
+        <div class="product-listing" id="product-listing">
+            <!-- Product cards will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Shopping Cart -->
+    <section id="cart" class="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+            <!-- Items added to the cart will appear here -->
+        </div>
+        <p class="total">Total: $<span id="total">0.00</span></p>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </section>
+
+    <!-- Checkout Page -->
+    <section id="checkout" class="checkout-section">
+        <h2>Checkout</h2>
+        <form id="checkout-form" style="display: none;">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+            <label for="payment">Payment Method:</label>
+            <select id="payment" name="payment">
+                <option value="credit">Credit Card</option>
+                <option value="paypal">PayPal</option>
+            </select>
+            <button type="submit" class="place-order-btn">Place Order</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Elite Store. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
